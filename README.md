@@ -44,5 +44,6 @@ Categories:
 
 3) Model successfully classifies disaster images into 3 categories.
 
+<img width="1148" height="793" alt="predictions1" src="https://github.com/user-attachments/assets/c7b655fe-6e4f-4e9c-aa31-d577b26fc905" />
 
 
