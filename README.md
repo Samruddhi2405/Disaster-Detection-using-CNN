@@ -1,49 +1,90 @@
-🌍 Disaster Detection and Classification using CNN
+🌪️ Disaster Image Classification using CNN & EfficientNetB0
+📌 Overview
 
-📌 Project Overview:
+This project focuses on classifying disaster images (Flood, Fire, Earthquake, Cyclone, etc.) using Deep Learning.
+We start with a Simple CNN model and later enhance performance using EfficientNetB0 (transfer learning).
 
-This project demonstrates the use of Convolutional Neural Networks (CNNs) to automatically detect and classify disaster images (e.g., Flood, Fire, Earthquake).
-It shows how Deep Learning can assist in Disaster Management by quickly identifying the type of disaster from images.
+📂 Dataset
 
-📂 Dataset:
+Source: Kaggle – Disaster Images Dataset
 
-Dataset: Disaster Images Dataset (Kaggle)
-Total Images: ~13,573
-Categories:
-1) 🌊 Flood
-2) 🔥 Fire
-3) 🌎 Earthquake
+Size: ~13,573 images across multiple disaster categories.
 
-⚙️ Methodology:
+Preprocessing:
 
-1) Collect Dataset → Disaster images from Kaggle.
+Images resized to 224×224.
 
-2) Preprocessing → Resize (128×128), normalize pixel values.
+Normalization applied.
 
-3) Model Training → A CNN model with multiple Conv2D and MaxPooling layers.
+Data split: 80% Training, 20% Validation.
 
-4) Evaluation → Validate on unseen images and generate accuracy/loss plots.
+🧠 Models Implemented
+1️⃣ Simple CNN
 
-🧠 Model Architecture
+3 Convolutional Layers + Pooling
 
-1) Conv2D → MaxPooling (×3)
+Dense layers with ReLU activation
 
-2) Flatten Layer
+Softmax output layer
 
-3) Dense Layer (128 neurons + ReLU)
+Validation Accuracy: ~73%
 
-4) Dropout (to avoid overfitting)
+2️⃣ EfficientNetB0 (Transfer Learning)
 
-5) Output Layer (Softmax for 3 classes)
+Pretrained on ImageNet
+
+Fine-tuned last 20 layers
+
+Added Dense + Dropout layers
+
+Validation Accuracy: ~85–90%
 
 📊 Results
 
-1) Training Epochs: 5
+Simple CNN: 73% validation accuracy
 
-2) Validation Accuracy: ~73%
+EfficientNetB0: 85–90% validation accuracy
 
-3) Model successfully classifies disaster images into 3 categories.
+EfficientNetB0 shows better generalization & less overfitting
 
-<img width="1148" height="793" alt="predictions1" src="https://github.com/user-attachments/assets/c7b655fe-6e4f-4e9c-aa31-d577b26fc905" />
+📸 Example Predictions:
+
+Input Image → Predicted Disaster Category
+
+Model correctly classifies test images like Flood, Fire, Earthquake, Cyclone
+
+📈 Training Curves
+
+Simple CNN: Moderate accuracy, slight overfitting
+
+EfficientNetB0: Higher accuracy, smoother convergence
+
+(Add Accuracy & Loss plots here in your repo)
+
+🚀 How to Run
+In Google Colab
+
+Upload dataset to Google Drive
+
+Mount Drive in Colab
+
+Run the provided notebook
+
+# Clone repo
+!git clone https://github.com/<your-username>/disaster-classification.git
+cd disaster-classification
 
 
+Train models:
+
+simple_cnn.ipynb → runs baseline CNN
+
+efficientnetb0.ipynb → runs transfer learning
+
+🔮 Future Work
+
+Use deeper models (EfficientNetB3, ResNet50, InceptionV3)
+
+Deploy model as a Web App (Streamlit/Flask)
+
+Add real-time disaster detection from video streams
